@@ -47,7 +47,7 @@
             android:text="@string/login" />
 
         <Button
-            android:layout_toRightOf="@+id/button_login"
+            android:layout_toRightOf="@+id/button_register"
             android:id="@+id/button_register"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

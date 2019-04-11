@@ -1,8 +1,16 @@
 <resources>
+
+    <!--LoginActivity-->
     <string name="app_name">My Application</string>
     <string name="login_text">Insert username and password</string>
     <string name="username_hint">Insert username</string>
     <string name="password_hint">Insert password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <!--RegisterActivity-->
+    <string name="register_text">Register</string>
+    <string name="email_input_hint">Enter email</string>
+    <string name="username_input_hint">Enter username</string>
+    <string name="name_input_hint">Enter name</string>
+    <string name="password_input_hint">Enter password</string>
 </resources>
