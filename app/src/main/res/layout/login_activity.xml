@@ -5,5 +5,55 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:orientation="vertical" >
-  
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:textSize="14pt"
+        android:gravity="center"
+        android:id="@+id/text_view_id"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/login_text" />
+
+    <EditText
+        android:paddingTop="25dp"
+        android:id="@+id/username_input"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/username_hint"
+        android:inputType="text"/>
+
+    <EditText
+        android:paddingTop="25dp"
+        android:id="@+id/password_input"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/password_hint"
+        android:inputType="text"/>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+        <Button
+            android:id="@+id/button_login"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="15dp"
+            android:text="@string/login" />
+
+        <Button
+            android:layout_toRightOf="@+id/button_login"
+            android:id="@+id/button_register"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/register" />
+    </RelativeLayout>
+
+
+
 </LinearLayout>
