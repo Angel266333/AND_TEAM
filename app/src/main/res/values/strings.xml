@@ -25,5 +25,7 @@
     <string name="new_password_hint">Input new password</string>
     <!--CreatePlantProfile-->
     <string name="create_plant_profile">Create plant profile</string>
+    <string name="input_plant_name_hint">Input plant name</string>
+    <string name="select_template">Select template</string>
 
 </resources>
