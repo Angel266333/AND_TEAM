@@ -15,4 +15,6 @@
     <string name="password_input_hint">Enter password</string>
     <!--MainActivity-->
     <string name="welcome">Welcome</string>
+    <!--AccountSettings-->
+    <string name="edit_profile">Edit credentials</string>
 </resources>
