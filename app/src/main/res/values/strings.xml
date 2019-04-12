@@ -13,4 +13,6 @@
     <string name="username_input_hint">Enter username</string>
     <string name="name_input_hint">Enter name</string>
     <string name="password_input_hint">Enter password</string>
+    <!--MainActivity-->
+    <string name="welcome">Welcome</string>
 </resources>
