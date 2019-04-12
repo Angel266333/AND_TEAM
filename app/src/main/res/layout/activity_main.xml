@@ -16,5 +16,35 @@
         android:layout_width="wrap_content"
         android:text="@string/welcome" />
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/addPlantButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/homePageButton"
+            android:src="@drawable/addPlantButton" />
+
+        <ImageView
+            android:id="@+id/homePageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/homePageButton" />
+
+        <ImageView
+            android:id="@+id/userProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_toRightOf="@+id/homePageButton"
+            android:src="@drawable/userProfileButton" />
+    </RelativeLayout>
+
 
 </LinearLayout>
