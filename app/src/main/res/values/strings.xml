@@ -17,4 +17,11 @@
     <string name="welcome">Welcome</string>
     <!--AccountSettings-->
     <string name="edit_profile">Edit credentials</string>
+    <!--ModifyAccount-->
+    <string name="edit_credentials">Edit desired credentials</string>
+    <string name="new_username_hint">Input new username</string>
+    <string name="new_email_hint">Input new email</string>
+    <string name="new_name_hint">Input new name</string>
+    <string name="new_password_hint">Input new password</string>
+
 </resources>
