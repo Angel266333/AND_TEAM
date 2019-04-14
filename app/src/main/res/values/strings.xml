@@ -28,7 +28,18 @@
     <string name="input_plant_name_hint">Input plant name</string>
     <string name="select_template">Select template</string>
     <!--ViewPlantProfile-->
+    <string name="plant_name">Plant Name:</string>
+    <string name="current_temperature">Current temperature:</string>
+    <string name="humid_level">Humidity level:</string>
+    <string name="co2_level">CO2 level:</string>
     <string name="modify_plant_profile">Modify plant profile</string>
     <string name="water_plant">Water plant</string>
+    <!--ModifyPlantProfile-->
+    <string name="modify_plant_profile_header">Modify plant attributes</string>
+    <string name="lower_range_temperature">Lowest allowed temperature level</string>
+    <string name="higher_range_temperature">Max allowed temperature level</string>
+    <string name="co2_level_slider">CO2 level</string>
+    <string name="water_amount">Watering amount</string>
+    <string name="watering_interval">Watering interval</string>
 
 </resources>
