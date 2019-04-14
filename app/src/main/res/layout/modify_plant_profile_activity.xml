@@ -15,7 +15,7 @@
 
         <EditText
             android:id="@+id/min_range_temperature"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/lower_range_temperature"
             android:inputType="text"
@@ -23,7 +23,7 @@
 
     <EditText
         android:id="@+id/max_range_temperature"
-        android:layout_width="match_parent"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:hint="@string/higher_range_temperature"
         android:inputType="text"
@@ -31,7 +31,7 @@
 
         <EditText
             android:id="@+id/humidity_level"
-            android:layout_width="match_parent"
+            android:layout_width="275dp"
             android:layout_height="wrap_content"
             android:hint="@string/humid_level"
             android:inputType="text"
@@ -39,7 +39,7 @@
 
         <EditText
         android:id="@+id/co2_level_slider"
-        android:layout_width="match_parent"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:hint="@string/current_temperature"
         android:inputType="text"
@@ -47,7 +47,7 @@
 
     <EditText
         android:id="@+id/water_amount"
-        android:layout_width="match_parent"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:hint="@string/water_amount"
         android:inputType="text"
@@ -55,7 +55,7 @@
 
     <EditText
         android:id="@+id/watering_interval"
-        android:layout_width="match_parent"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:hint="@string/watering_interval"
         android:inputType="text"
