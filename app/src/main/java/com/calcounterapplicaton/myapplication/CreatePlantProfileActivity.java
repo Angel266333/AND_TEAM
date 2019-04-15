@@ -10,7 +10,8 @@ import android.widget.Toast;
 
 public class CreatePlantProfileActivity extends AppCompatActivity {
     Spinner spinner_d;
-    String options[]={"Normal Templatte","Tropical Template","Desert Template"};
+    //array with the options of the drop-down menu
+    String options[]={"Normal Template","Tropical Template","Desert Template"};
     ArrayAdapter<String>arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -22,6 +23,7 @@ public class CreatePlantProfileActivity extends AppCompatActivity {
         spinner_d.setAdapter(arrayAdapter);
 
         spinner_d.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            //displaying a toast message with the selected choice of the user
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(),"Your chosen template is: "+options[i],Toast.LENGTH_SHORT).show();
