@@ -14,7 +14,10 @@
     <string name="name_input_hint">Enter name</string>
     <string name="password_input_hint">Enter password</string>
     <!--MainActivity-->
-    <string name="welcome">Welcome</string>
+    <string name="welcome">Welcome:</string>
+    <string name="add_plant">Add Plant</string>
+    <string name="plant_list">Plant list</string>
+    <string name="user_acc">My account</string>
     <!--AccountSettings-->
     <string name="edit_profile">Edit credentials</string>
     <!--ModifyAccount-->

@@ -107,7 +107,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:paddingTop="12dp"
-            android:src="@drawable/waterAmount"
+            android:src="@drawable/wateramount"
             />
     </RelativeLayout>
 
@@ -131,7 +131,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:paddingTop="12dp"
-            android:src="@drawable/wateringInterval"
+            android:src="@drawable/wateringinterval"
             />
     </RelativeLayout>
 
@@ -141,7 +141,7 @@
     android:layout_marginTop="20dp"
     android:layout_gravity="center"
     android:layout_height="wrap_content"
-    android:src="@drawable/saveButton"
+    android:src="@drawable/savebutton"
     />
 
 </LinearLayout>
