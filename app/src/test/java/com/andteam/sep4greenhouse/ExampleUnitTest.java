@@ -1,4 +1,4 @@
-package com.calcounterapplicaton.myapplication;
+package com.andteam.sep4greenhouse;
 
 import org.junit.Test;
 

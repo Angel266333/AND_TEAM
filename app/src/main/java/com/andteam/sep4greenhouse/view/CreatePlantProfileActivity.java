@@ -1,4 +1,4 @@
-package com.calcounterapplicaton.myapplication;
+package com.andteam.sep4greenhouse.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.andteam.sep4greenhouse.R;
 
 public class CreatePlantProfileActivity extends AppCompatActivity {
     Spinner spinner_d;

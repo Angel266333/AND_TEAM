@@ -1,7 +1,9 @@
-package com.calcounterapplicaton.myapplication;
+package com.andteam.sep4greenhouse.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.andteam.sep4greenhouse.R;
 
 public class ModifyAccountActivity extends AppCompatActivity {
 
