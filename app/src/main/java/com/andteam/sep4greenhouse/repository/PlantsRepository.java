@@ -7,6 +7,8 @@ import java.util.List;
 
 public class PlantsRepository {
 
+
+    // Class makes use of Singleton - only one instance can be referenced.
     private static PlantsRepository instance;
 
     public static PlantsRepository getInstance() {
@@ -19,14 +21,14 @@ public class PlantsRepository {
     }
 
     public PlantDTO getPlantDetails(int pID) {
-
+    return null;
     }
 
     public List<ProfileDTO> getPlantProfile() {
-
+    return null;
     }
 
     public boolean createPlantProfile(String name, int waterAmount, int waterInterval) {
-
+    return false;
     }
 }

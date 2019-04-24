@@ -6,7 +6,9 @@ import com.andteam.sep4greenhouse.network.APIConnection;
 
 public class UserRepository {
 
+    // Access UserRepository instance
     private static UserRepository instance;
+    // Construct UserProfileDTO object reference
     private UserProfileDTO userProfileDTO;
     private APIConnection apiConnection;
 
