@@ -1,50 +1,63 @@
 package com.andteam.sep4greenhouse.view;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.andteam.sep4greenhouse.R;
 
-public class MainActivity extends AppCompatActivity {
+//implement the interface OnNavigationItemSelectedListener in your activity class
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private TextView mTextMessage;
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_add_plant:
-                    Intent intent_create_plant = new Intent(MainActivity.this, CreatePlantProfileActivity.class);
-                    startActivity(intent_create_plant);
-                    return true;
-                case R.id.navigation_recycler_plants:
-                    Intent intent_plant_recycler = new Intent(MainActivity.this, MainActivity.class);
-                    startActivity(intent_plant_recycler);
-                    return true;
-                case R.id.navigation_user_profile:
-                    Intent intent_user_proifle = new Intent(MainActivity.this, ModifyAccountActivity.class);
-                    startActivity(intent_user_proifle);
-                    return true;
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //loading the default fragment
+        loadFragment(new ViewplantsFragment());
+
+        //getting bottom navigation view and attaching the listener
+        BottomNavigationView navigation = findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(this);
     }
 
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+
+        switch (item.getItemId()) {
+            case R.id.navigation_add_plant:
+                fragment = new AddplantFragment();
+                break;
+
+            case R.id.navigation_recycler_plants:
+                fragment = new ViewplantsFragment();
+                break;
+
+            case R.id.navigation_user_profile:
+                fragment = new ModifyaccountFragment();
+                break;
+
+        }
+
+        return loadFragment(fragment);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
 }

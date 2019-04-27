@@ -2,6 +2,7 @@ package com.andteam.sep4greenhouse.view;
 
 import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +25,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        username = findViewById(R.id.username_input);
-        password = findViewById(R.id.password_input);
+        username = findViewById(R.id.userName);
+        password = findViewById(R.id.password);
 
         initUserLoginButton();
         initRegistrationRedirection();
