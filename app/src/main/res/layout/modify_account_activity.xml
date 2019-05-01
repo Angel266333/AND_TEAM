@@ -14,38 +14,55 @@
         android:id="@+id/text_view_id"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/edit_credentials" />
 
     <EditText
         android:paddingTop="25dp"
+        android:padding="10dp"
         android:id="@+id/new_username_input"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="315dp"
+        android:layout_height="49dp"
         android:hint="@string/new_username_hint"
+        android:background="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:inputType="text"/>
 
     <EditText
         android:paddingTop="25dp"
+        android:padding="10dp"
         android:id="@+id/new_email_input"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="315dp"
+        android:layout_height="49dp"
         android:hint="@string/new_email_hint"
+        android:background="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:inputType="text"/>
 
     <EditText
         android:paddingTop="25dp"
+        android:padding="10dp"
         android:id="@+id/new_name_input"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="315dp"
+        android:layout_height="49dp"
         android:hint="@string/new_name_hint"
+        android:background="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:inputType="text"/>
 
     <EditText
         android:paddingTop="25dp"
+        android:padding="10dp"
         android:id="@+id/new_password_input"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="315dp"
+        android:layout_height="49dp"
         android:hint="@string/new_password_hint"
+        android:background="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:inputType="text"/>
 
 
