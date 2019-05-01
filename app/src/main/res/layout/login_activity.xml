@@ -15,9 +15,10 @@
         android:src="@drawable/plantlogo"
         android:layout_gravity="center_horizontal"/>
     <TextView
+        android:id="@+id/text_view_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insert username and password"
+        android:text="@string/login_text"
         android:layout_marginTop="20dp"
         android:textSize="30sp"
         android:gravity="center"
@@ -30,7 +31,7 @@
         tools:layout_editor_absoluteY="200dp">
 
         <EditText
-            android:id="@+id/userName"
+            android:id="@+id/username_input"
             android:layout_width="315dp"
             android:layout_height="49dp"
             android:layout_marginStart="50dp"
@@ -48,7 +49,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/password_input"
             android:layout_width="316dp"
             android:layout_height="46dp"
             android:layout_marginStart="50dp"
