@@ -1,9 +1,10 @@
 package com.andteam.sep4greenhouse.network;
 
 import com.andteam.sep4greenhouse.model.LoginResponseDTO;
+import com.andteam.sep4greenhouse.model.TestResponse;
 
-interface LoginRequestCallback {
+public interface LoginRequestCallback {
 
-    public void onReturn(LoginResponseDTO response);
+    public void onReturn(TestResponse response);
 
 }

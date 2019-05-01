@@ -1,7 +1,10 @@
 package com.andteam.sep4greenhouse.network;
 
+import android.util.Log;
+
 import com.andteam.sep4greenhouse.model.LoginDTO;
 import com.andteam.sep4greenhouse.model.LoginResponseDTO;
+import com.andteam.sep4greenhouse.model.TestResponse;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -18,29 +21,30 @@ public class LoginRequest implements LoginCallback {
     public void start(LoginDTO loginDTO, LoginRequestCallback loginRequestCallback) {
         this.callback = loginRequestCallback;
 
+        // Build Retrofit Connection
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        // Reference to RetrofitAPI class
         RetrofitAPI api = retrofit.create(RetrofitAPI.class);
-        Call<LoginResponseDTO> call = api.login(loginDTO);
+        Call<TestResponse> call = api.login(loginDTO);
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<LoginResponseDTO> call, Response<LoginResponseDTO> response) {
+    public void onResponse(Call<TestResponse> call, Response<TestResponse> response) {
         if (response.code() == 200) {
             callback.onReturn(response.body());
-            //
         } else {
-            callback.onReturn(new LoginResponseDTO(false, null));
+            callback.onReturn(response.body());
         }
 
     }
 
     @Override
-    public void onFailure(Call<LoginResponseDTO> call, Throwable t) {
-        callback.onReturn(new LoginResponseDTO(false, null));
+    public void onFailure(Call<TestResponse> call, Throwable t) {
+        Log.d("Login failed", t.toString());
     }
 }

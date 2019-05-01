@@ -3,19 +3,22 @@
     package="com.andteam.sep4greenhouse">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.andteam.sep4greenhouse.view.MainActivity">
+        <activity android:name="com.andteam.sep4greenhouse.view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.andteam.sep4greenhouse.view.LoginActivity"
+        <activity android:name="com.andteam.sep4greenhouse.view.MainActivity"
+            android:exported="true"></activity>
+        <activity android:name="com.andteam.sep4greenhouse.view.RegisterActivity"
             android:exported="true"></activity>
         <activity android:name="com.andteam.sep4greenhouse.view.AccountSettingsActivity"
             android:exported="true"></activity>

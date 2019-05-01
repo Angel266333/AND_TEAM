@@ -1,13 +1,17 @@
 package com.andteam.sep4greenhouse.view;
 
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.R;
 import com.andteam.sep4greenhouse.viewmodel.LoginViewModel;
@@ -19,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private Button btnRegister;
     private LoginViewModel loginViewModel;
+    // Do observer on loginViewModel
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +32,17 @@ public class LoginActivity extends AppCompatActivity {
 
         username = findViewById(R.id.userName);
         password = findViewById(R.id.password);
+        loginViewModel = new LoginViewModel();
+
+        btnRegister = findViewById(R.id.button_register);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onUserRegisterClick();
+            }
+        });
 
         initUserLoginButton();
-        initRegistrationRedirection();
         initViewModel();
     }
 
@@ -38,29 +51,38 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO : Notify ViewModel
-                //TODO : React on change
-            }
-        });
-    }
+                loginViewModel.login(username.getText().toString(), password.getText().toString());
 
-    private void initRegistrationRedirection() {
-        btnRegister = findViewById(R.id.button_register);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startRegistration();
+
             }
         });
     }
 
     private void initViewModel() {
-        //TODO
+        loginViewModel.getTest().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                if (aBoolean) {
+                    makeToast();
+                    onUserLoginClick();
+            }
+        }
+    });
     }
 
-    private void startRegistration() {
-        Intent registration = new Intent(this, RegisterActivity.class);
-        startActivity(registration);
-        finish();
+    private void makeToast() {
+        String text = loginViewModel.responseFromRetrofit;
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+    }
+
+    private void onUserRegisterClick() {
+        Intent register = new Intent(this, RegisterActivity.class);
+        startActivity(register);
+
+    }
+
+    private void onUserLoginClick() {
+        Intent login = new Intent(this, MainActivity.class);
+        startActivity(login);
     }
 }

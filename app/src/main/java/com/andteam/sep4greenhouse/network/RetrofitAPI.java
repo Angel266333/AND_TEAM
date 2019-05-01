@@ -3,6 +3,7 @@ package com.andteam.sep4greenhouse.network;
 import com.andteam.sep4greenhouse.model.LoginDTO;
 import com.andteam.sep4greenhouse.model.LoginResponseDTO;
 import com.andteam.sep4greenhouse.model.PlantDTO;
+import com.andteam.sep4greenhouse.model.TestResponse;
 import com.andteam.sep4greenhouse.model.UserProfileDTO;
 
 import java.util.List;
@@ -13,12 +14,13 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Query;
 
 public interface RetrofitAPI {
 
     // 1
     @POST("/login")
-    Call<LoginResponseDTO> login(@Body LoginDTO loginDTO);
+    Call<TestResponse> login(@Body LoginDTO loginDTO);
 
     // 2
     @POST("/register")
@@ -46,7 +48,8 @@ public interface RetrofitAPI {
 
     // 8
     @GET("/plantprofile")
-    Call<List<PlantDTO>> getAllPlants();
+    // What type of attribute will be used to get this specific plant?
+    // Call<List<PlantDTO>> getAllPlants(@Query());
 
     // 9
     @POST("/plantprofile")
@@ -67,4 +70,5 @@ public interface RetrofitAPI {
     // 13
     @POST("/water/{id}")
     Call<PlantDTO> waterPlant(@Body PlantDTO plantDTO);
+
 }

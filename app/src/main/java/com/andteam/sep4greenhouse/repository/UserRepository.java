@@ -3,6 +3,8 @@ package com.andteam.sep4greenhouse.repository;
 import com.andteam.sep4greenhouse.model.LoginDTO;
 import com.andteam.sep4greenhouse.model.UserProfileDTO;
 import com.andteam.sep4greenhouse.network.APIConnection;
+import com.andteam.sep4greenhouse.network.LoginRequest;
+import com.andteam.sep4greenhouse.network.LoginRequestCallback;
 
 public class UserRepository {
 
@@ -12,7 +14,7 @@ public class UserRepository {
     private UserProfileDTO userProfileDTO;
     private APIConnection apiConnection;
 
-    private UserRepository() {
+    public UserRepository() {
     apiConnection = new APIConnection();
     }
 
@@ -25,8 +27,12 @@ public class UserRepository {
         }
     }
 
-    public void login(String username, String password) {
+    public void login(String username, String password, LoginRequestCallback requestCallback) {
 
+        LoginDTO loginDTO = new LoginDTO(username, password);
+
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.start(loginDTO,requestCallback);
     }
 
     public void update(UserProfileDTO user) {
