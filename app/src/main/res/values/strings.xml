@@ -8,7 +8,7 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <!--RegisterActivity-->
-    <string name="register_text">Register</string>
+    <string name="submit_register_text">Submit Register</string>
     <string name="email_input_hint">Enter email</string>
     <string name="username_input_hint">Enter username</string>
     <string name="name_input_hint">Enter name</string>
