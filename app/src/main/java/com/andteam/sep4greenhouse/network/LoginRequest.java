@@ -40,7 +40,6 @@ public class LoginRequest implements LoginCallback {
         } else {
             callback.onReturn(response.body());
         }
-
     }
 
     @Override

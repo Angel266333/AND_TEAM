@@ -7,14 +7,27 @@
     android:background="@drawable/bgapp"
     tools:context=".view.MainActivity">
 
-
-
     <FrameLayout
         android:id="@+id/frame_layout"
         android:animateLayoutChanges="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navigation"></FrameLayout>
+        android:layout_above="@+id/navigation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                />
+
+        </RelativeLayout>
+
+    </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -26,6 +39,5 @@
         app:itemTextColor="@drawable/nav_item_color_state"
         app:menu="@menu/navigation"
         />
-
 
 </RelativeLayout>

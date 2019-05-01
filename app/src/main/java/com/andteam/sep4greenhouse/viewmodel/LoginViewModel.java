@@ -9,7 +9,7 @@ import com.andteam.sep4greenhouse.network.LoginRequest;
 import com.andteam.sep4greenhouse.network.LoginRequestCallback;
 import com.andteam.sep4greenhouse.repository.UserRepository;
 public class LoginViewModel implements LoginRequestCallback {
-// Notifies the repository
+    // Notifies the repository
     // Boolean live data if logged in or not
     private UserRepository userRepository;
     public MutableLiveData<Boolean> test;

@@ -13,5 +13,4 @@ public class APIConnection {
     public void register(String email, String username, String name) {
         UserProfileDTO dtoUser = new UserProfileDTO(email, username, name);
     }
-
 }

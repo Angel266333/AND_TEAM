@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 
 import com.andteam.sep4greenhouse.R;
@@ -12,18 +13,23 @@ import com.andteam.sep4greenhouse.R;
 //implement the interface OnNavigationItemSelectedListener in your activity class
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //loading the default fragment
-        loadFragment(new ViewplantsFragment());
+        // Loading the default fragment
+        loadFragment(new ViewPlantsFragment());
 
-        //getting bottom navigation view and attaching the listener
+        // Getting bottom navigation view and attaching the listener
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
+
+        // Initialize RecyclerView
+        recyclerView = findViewById(R.id.rv);
+
     }
 
 
@@ -33,15 +39,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         switch (item.getItemId()) {
             case R.id.navigation_add_plant:
-                fragment = new AddplantFragment();
+                fragment = new AddPlantFragment();
                 break;
 
             case R.id.navigation_recycler_plants:
-                fragment = new ViewplantsFragment();
+                fragment = new ViewPlantsFragment();
                 break;
 
             case R.id.navigation_user_profile:
-                fragment = new ModifyaccountFragment();
+                fragment = new ModifyAccountFragment();
                 break;
 
         }

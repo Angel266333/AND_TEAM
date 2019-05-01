@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.andteam.sep4greenhouse.R;
 
 
-public class AddplantFragment extends Fragment {
+public class AddPlantFragment extends Fragment {
 
     @Nullable
     @Override

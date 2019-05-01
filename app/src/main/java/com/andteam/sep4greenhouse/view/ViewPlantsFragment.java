@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.andteam.sep4greenhouse.R;
 
 
-public class ModifyaccountFragment extends Fragment {
+public class ViewPlantsFragment extends Fragment {
 
     @Nullable
     @Override
@@ -21,6 +21,6 @@ public class ModifyaccountFragment extends Fragment {
         //with the fragment you want to inflate
         //like if the class is HomeFragment it should have R.layout.home_fragment
         //if it is DashboardFragment it should have R.layout.fragment_dashboard
-        return inflater.inflate(R.layout.fragment_modifyaccount, null);
+        return inflater.inflate(R.layout.fragment_viewplants, null);
     }
 }
