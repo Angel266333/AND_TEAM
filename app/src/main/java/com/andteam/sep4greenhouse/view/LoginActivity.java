@@ -38,7 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO
+                //TODO : Notify ViewModel
+                //TODO : React on change
             }
         });
     }

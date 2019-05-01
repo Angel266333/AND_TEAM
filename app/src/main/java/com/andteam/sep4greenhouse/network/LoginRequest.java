@@ -32,9 +32,11 @@ public class LoginRequest implements LoginCallback {
     public void onResponse(Call<LoginResponseDTO> call, Response<LoginResponseDTO> response) {
         if (response.code() == 200) {
             callback.onReturn(response.body());
+            //
         } else {
             callback.onReturn(new LoginResponseDTO(false, null));
         }
+
     }
 
     @Override

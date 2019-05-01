@@ -17,8 +17,8 @@ public interface RetrofitAPI {
     @POST("/register")
     Call<UserProfileDTO> register(@Body UserProfileDTO userProfileDTO);
 
-    // @GET("/user/{id}")
-    // Call<UserProfileDTO>
+    //@GET("/user/{id}")
+    //Call<UserProfileDTO> retrieveUserById(@Body )
 
 
 }
