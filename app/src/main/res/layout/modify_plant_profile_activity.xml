@@ -2,16 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#D3D3D3"
+    android:background="@drawable/backgroundlogin"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/text_view_id"
+        android:id="@+id/modify_plant_profile_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="40dp"
         android:gravity="center"
+        android:textColor="@color/white"
         android:text="@string/modify_plant_profile_header"
         android:textSize="14pt" />
 
@@ -22,16 +23,19 @@
         android:paddingRight="16dp" >
         <EditText
             android:id="@+id/min_range_temperature"
-            android:layout_width="275dp"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:hint="@string/lower_range_temperature"
             android:inputType="text"
+            android:background="@color/white"
+            android:padding="10dp"
             android:paddingTop="25dp" />
 
 
         <ImageView
             android:layout_toRightOf="@id/min_range_temperature"
             android:layout_width="wrap_content"
+            android:id="@+id/min_range_temperature_image"
             android:layout_gravity="center"
             android:paddingTop="10dp"
             android:layout_height="wrap_content"
@@ -46,15 +50,18 @@
     android:paddingRight="16dp" >
     <EditText
         android:id="@+id/max_range_temperature"
-        android:layout_width="275dp"
+        android:layout_width="325dp"
         android:layout_height="wrap_content"
         android:hint="@string/higher_range_temperature"
         android:inputType="text"
+        android:background="@color/white"
+        android:padding="10dp"
         android:paddingTop="25dp" />
 
 
     <ImageView
         android:layout_toRightOf="@id/max_range_temperature"
+        android:id="@+id/max_range_temperature_image"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:paddingTop="10dp"
@@ -71,15 +78,18 @@
         android:paddingRight="16dp" >
         <EditText
             android:id="@+id/humidity_level"
-            android:layout_width="275dp"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:hint="@string/humid_level"
             android:inputType="text"
+            android:background="@color/white"
+            android:padding="10dp"
             android:paddingTop="25dp" />
 
 
         <ImageView
             android:layout_toRightOf="@id/humidity_level"
+            android:id="@+id/humidity_level_image"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
@@ -94,15 +104,18 @@
         android:paddingRight="16dp" >
         <EditText
             android:id="@+id/water_amount"
-            android:layout_width="275dp"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:hint="@string/water_amount"
             android:inputType="text"
+            android:background="@color/white"
+            android:padding="10dp"
             android:paddingTop="25dp" />
 
 
         <ImageView
             android:layout_toRightOf="@id/water_amount"
+            android:id="@+id/water_amount_image"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
@@ -118,15 +131,18 @@
         android:paddingRight="16dp" >
         <EditText
             android:id="@+id/watering_interval"
-            android:layout_width="275dp"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:hint="@string/water_amount"
             android:inputType="text"
+            android:background="@color/white"
+            android:padding="10dp"
             android:paddingTop="25dp" />
 
 
         <ImageView
             android:layout_toRightOf="@id/watering_interval"
+            android:id="@+id/watering_interval_image"
             android:layout_width="wrap_content"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
