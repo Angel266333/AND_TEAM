@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3D3D3"
+    android:background="@drawable/backgroundlogin"
     tools:context=".view.AccountSettingsActivity">
 
     <Button
@@ -12,6 +12,8 @@
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     android:layout_centerInParent="true"
+        android:background="@drawable/btn"
+        android:textColor="@color/white"
     android:text="@string/edit_profile" />
 
     <android.support.design.widget.FloatingActionButton
