@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D3D3D3"
+    android:background="@drawable/backgroundlogin"
     android:orientation="vertical">
 
     <TextView
@@ -14,14 +14,19 @@
         android:id="@+id/create_plant_profile_text"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/create_plant_profile" />
 
     <EditText
         android:paddingTop="25dp"
         android:id="@+id/input_plant_name"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="275dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10"
         android:hint="@string/input_plant_name_hint"
+        android:background="@color/white"
+        android:padding="10dp"
         android:inputType="text"/>
 
     <TextView
@@ -32,6 +37,7 @@
         android:id="@+id/select_template"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/select_template" />
     
     <android.support.v7.widget.AppCompatSpinner
