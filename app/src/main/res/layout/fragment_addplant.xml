@@ -42,9 +42,26 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_width="275dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/spinner"
+        android:spinnerMode="dropdown"
+        android:padding="10dp"
      />
+
+    <Button
+        android:id="@+id/button_create"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/btn"
+        android:gravity="center"
+        android:text="@string/createbtn"
+        android:textColor="@color/white"
+       />
 
 
 

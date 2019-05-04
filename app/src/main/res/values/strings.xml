@@ -42,17 +42,17 @@
     <string name="lower_range_temperature">Lowest allowed temperature level</string>
     <string name="higher_range_temperature">Max allowed temperature level</string>
     <string name="co2_level_slider">CO2 level</string>
-    <string name="water_amount">Watering amount</string>
+    <string name="water_amount">Water amount</string>
+    <string name="savebtn">Save</string>
+    <string name="createbtn">Create</string>
     <string name="watering_interval">Watering interval</string>
 
     <!--Spinner in AddPlantFragment-->
     <string-array name="spinner_choices">
-        <item>Deafult Choice</item>
-        <item>Choice 1</item>
-        <item>Choice 2</item>
-        <item>Choice 3</item>
-        <item>Choice 4</item>
-        <item>Choice 5</item>
+        <item>Not selected</item>
+        <item>Tropical</item>
+        <item>Desert</item>
+        <item>Mountain</item>
     </string-array>
 
 

@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         navigation.setOnNavigationItemSelectedListener(this);
 
         // Initialize RecyclerView
-        recyclerView = findViewById(R.id.rv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //recyclerView = findViewById(R.id.rv);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ListAdapter(plants);
-        recyclerView.setAdapter(adapter);
+        //recyclerView.setAdapter(adapter);
         // Observes changes happening on Live Data
         viewModel.getResponses().observe(this, new Observer<List<TestResponse>>() {
             @Override
