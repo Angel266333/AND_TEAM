@@ -2,25 +2,24 @@ package com.andteam.sep4greenhouse.model;
 
 public class TestResponse {
 
-    private String response;
+    private String value;
 
-    public String getResponse() {
-        return response;
+    public String getValue() {
+        return value;
     }
 
-    public void setResponse(String response) {
-        this.response = response;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public TestResponse(String response) {
-        this.response = response;
+        this.value = response;
     }
 
     @Override
     public String toString() {
         return "TestResponse{" +
-                "response='" + response + '\'' +
+                "value='" + value + '\'' +
                 '}';
     }
-
 }

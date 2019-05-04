@@ -3,7 +3,6 @@ package com.andteam.sep4greenhouse.network;
 import android.util.Log;
 
 import com.andteam.sep4greenhouse.model.LoginDTO;
-import com.andteam.sep4greenhouse.model.LoginResponseDTO;
 import com.andteam.sep4greenhouse.model.TestResponse;
 
 import retrofit2.Call;
@@ -13,7 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.andteam.sep4greenhouse.network.NetworkConfig.BASE_URL;
 
-public class LoginRequest implements LoginCallback {
+public class RegisterRequest implements LoginCallback {
 
     private LoginRequestCallback callback;
 

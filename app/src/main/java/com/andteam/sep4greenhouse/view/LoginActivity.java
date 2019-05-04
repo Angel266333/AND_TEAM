@@ -2,6 +2,7 @@ package com.andteam.sep4greenhouse.view;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.R;
 import com.andteam.sep4greenhouse.viewmodel.LoginViewModel;
+import com.andteam.sep4greenhouse.viewmodel.TestViewModel;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
         username = findViewById(R.id.username_input);
         password = findViewById(R.id.password_input);
-        loginViewModel = new LoginViewModel();
+        loginViewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
 
         btnRegister = findViewById(R.id.button_register);
         btnRegister.setOnClickListener(new View.OnClickListener() {

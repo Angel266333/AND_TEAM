@@ -35,6 +35,14 @@ public class UserRepository {
         loginRequest.start(loginDTO,requestCallback);
     }
 
+    public void register(String email, String username, String name, String password, LoginRequestCallback requestCallback) {
+
+        UserProfileDTO userProfileDTO = new UserProfileDTO(email, username, name, password);
+//
+//        LoginRequest loginRequest = new LoginRequest();
+//        loginRequest.start(userProfileDTO,requestCallback);
+    }
+
     public void update(UserProfileDTO user) {
 
     }

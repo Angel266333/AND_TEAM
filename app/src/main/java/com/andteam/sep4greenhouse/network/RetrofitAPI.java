@@ -20,7 +20,7 @@ public interface RetrofitAPI {
 
     // 1
     @POST("/login")
-    Call<TestResponse> login(@Body LoginDTO loginDTO);
+    Call<TestResponse> login();//@Body LoginDTO loginDTO);
 
     // 2
     @POST("/register")

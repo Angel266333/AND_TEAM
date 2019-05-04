@@ -9,21 +9,19 @@
 
     <FrameLayout
         android:id="@+id/frame_layout"
-        android:animateLayoutChanges="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navigation">
+        android:layout_above="@+id/navigation"
+        android:animateLayoutChanges="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv"
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                />
+                android:layout_height="match_parent" />
 
         </RelativeLayout>
 
@@ -37,7 +35,6 @@
         android:background="#019385"
         app:itemIconTint="@drawable/nav_item_color_state"
         app:itemTextColor="@drawable/nav_item_color_state"
-        app:menu="@menu/navigation"
-        />
+        app:menu="@menu/navigation" />
 
 </RelativeLayout>
