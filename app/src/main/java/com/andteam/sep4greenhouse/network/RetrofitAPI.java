@@ -19,7 +19,9 @@ import retrofit2.http.Query;
 public interface RetrofitAPI {
 
     // 1
-    @POST("/login")
+//    @POST("/login")
+//    Call<TestResponse> login();//@Body LoginDTO loginDTO);
+    @GET("/jokes/random")
     Call<TestResponse> login();//@Body LoginDTO loginDTO);
 
     // 2

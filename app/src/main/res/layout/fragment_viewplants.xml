@@ -10,8 +10,16 @@
         android:id="@+id/rvholder"
         >
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="@string/welcome"
+            android:id="@+id/welcomeuser"
+            />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv"
+            android:layout_below="@id/welcomeuser"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             />

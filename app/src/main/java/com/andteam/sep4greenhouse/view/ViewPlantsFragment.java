@@ -1,6 +1,8 @@
 package com.andteam.sep4greenhouse.view;
 
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 
 import com.andteam.sep4greenhouse.R;
 import com.andteam.sep4greenhouse.model.TestResponse;
+import com.andteam.sep4greenhouse.viewmodel.LoginViewModel;
 import com.andteam.sep4greenhouse.viewmodel.TestViewModel;
 
 import java.util.List;
@@ -48,12 +51,13 @@ public class ViewPlantsFragment extends Fragment {
         // Initialize RecyclerView
         View v = inflater.inflate(R.layout.fragment_viewplants, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.rv);
+        viewModel = ViewModelProviders.of(this).get(TestViewModel.class);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new ListAdapter(plants);
-        //recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
         // Observes changes happening on Live Data
-        viewModel.getResponses().observe(getActivity(), new Observer<List<TestResponse>>() {
+        viewModel.getResponses().observe(this, new Observer<List<TestResponse>>() {
             @Override
             public void onChanged(@Nullable List<TestResponse> testResponses) {
                 adapter.setPlants(testResponses);

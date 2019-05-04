@@ -10,5 +10,4 @@ public interface LoginCallback extends Callback<TestResponse> {
 
     void start(LoginDTO loginDTO, LoginRequestCallback loginRequestCallback);
 
-
 }
