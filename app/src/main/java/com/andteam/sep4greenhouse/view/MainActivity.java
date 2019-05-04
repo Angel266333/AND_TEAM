@@ -22,20 +22,10 @@ import java.util.List;
 //implement the interface OnNavigationItemSelectedListener in your activity class
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private RecyclerView recyclerView;
-    private ListAdapter adapter;
-    // Replace with actual class that contains plant object.
-    private List<TestResponse> plants;
-    private TestViewModel viewModel;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        viewModel = ViewModelProviders.of(this).get(TestViewModel.class);
-
-        plants = new ArrayList<>();
 
         // Loading the default fragment
         loadFragment(new ViewPlantsFragment());
@@ -44,18 +34,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        // Initialize RecyclerView
-        //recyclerView = findViewById(R.id.rv);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ListAdapter(plants);
-        //recyclerView.setAdapter(adapter);
-        // Observes changes happening on Live Data
-        viewModel.getResponses().observe(this, new Observer<List<TestResponse>>() {
-            @Override
-            public void onChanged(@Nullable List<TestResponse> testResponses) {
-                adapter.setPlants(testResponses);
-            }
-        });
+
 
     }
 

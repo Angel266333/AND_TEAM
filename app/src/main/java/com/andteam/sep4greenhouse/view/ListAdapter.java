@@ -31,7 +31,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        viewHolder.itemInRV.setText(plantDTOS.get(position).getValue());
+
+        viewHolder.itemInRV.setText("Longboi");
+
+        // viewHolder.itemInRV.setText(plantDTOS.get(position).getValue());
     }
 
     public void setPlants(List<TestResponse> plantDTOS){
