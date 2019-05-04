@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
     }
 
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment fragment = null;
@@ -76,9 +75,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             case R.id.navigation_user_profile:
                 fragment = new ModifyAccountFragment();
                 break;
-
         }
-
         return loadFragment(fragment);
     }
 

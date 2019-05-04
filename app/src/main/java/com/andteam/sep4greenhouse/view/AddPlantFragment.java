@@ -24,3 +24,5 @@ public class AddPlantFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_addplant, null);
     }
 }
+
+
