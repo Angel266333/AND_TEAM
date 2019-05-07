@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.calcounterapplicaton.myapplication"
+        applicationId "com.andteam.sep4greenhouse.view"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -39,4 +39,7 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:viewmodel:1.1.1"
 
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+
 }
+apply plugin: 'com.google.gms.google-services'
