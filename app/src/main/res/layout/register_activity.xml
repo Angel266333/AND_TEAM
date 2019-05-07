@@ -19,7 +19,7 @@
 
     <EditText
         android:paddingTop="25dp"
-        android:id="@+id/email_input"
+        android:id="@+id/email_register_input"
         android:layout_width="315dp"
         android:layout_height="49dp"
         android:padding="10dp"
@@ -31,31 +31,7 @@
 
     <EditText
         android:paddingTop="25dp"
-        android:id="@+id/username_input"
-        android:layout_width="315dp"
-        android:layout_height="49dp"
-        android:padding="10dp"
-        android:layout_marginLeft="50dp"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:hint="@string/username_input_hint"
-        android:inputType="text"/>
-
-    <EditText
-        android:paddingTop="25dp"
-        android:id="@+id/name_input"
-        android:layout_width="315dp"
-        android:layout_height="49dp"
-        android:padding="10dp"
-        android:layout_marginLeft="50dp"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:hint="@string/name_input_hint"
-        android:inputType="text"/>
-
-    <EditText
-        android:paddingTop="25dp"
-        android:id="@+id/password_input"
+        android:id="@+id/password_register_input"
         android:layout_width="315dp"
         android:layout_height="49dp"
         android:layout_marginTop="10dp"

@@ -1,10 +1,7 @@
 package com.andteam.sep4greenhouse.view;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,13 +13,12 @@ import android.view.ViewGroup;
 
 import com.andteam.sep4greenhouse.R;
 import com.andteam.sep4greenhouse.model.TestResponse;
-import com.andteam.sep4greenhouse.viewmodel.LoginViewModel;
 import com.andteam.sep4greenhouse.viewmodel.TestViewModel;
 
 import java.util.List;
 
 
-public class ViewPlantsFragment extends Fragment {
+public class ViewPlantsFragment extends Fragment implements OnListItemClickListener {
 
     private RecyclerView recyclerView;
     private ListAdapter adapter;
@@ -54,7 +50,7 @@ public class ViewPlantsFragment extends Fragment {
         viewModel = ViewModelProviders.of(this).get(TestViewModel.class);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        adapter = new ListAdapter(getActivity(), plants);
+        adapter = new ListAdapter(getContext(), plants, this);
         recyclerView.setAdapter(adapter);
         // Observes changes happening on Live Data
         viewModel.getResponses().observe(this, new Observer<List<TestResponse>>() {
@@ -65,5 +61,18 @@ public class ViewPlantsFragment extends Fragment {
         });
 
         return v;
+    }
+
+    @Override
+    public void onListItemEditClick(TestResponse plantDTO) {
+        // Replace fragment in MainActivity with EditPlantFragment
+        Fragment editPlantProfile = new ModifyPlantProfileFragment();
+        ((MainActivity) getActivity()).loadFragment(editPlantProfile);
+    }
+
+    @Override
+    public void onListItemDeleteCLick(TestResponse plantDTO) {
+        // Invoke viewmodel to do a delete on specific plant object
+
     }
 }
