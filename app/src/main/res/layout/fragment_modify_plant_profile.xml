@@ -44,31 +44,31 @@
     </RelativeLayout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="5dp"
-    android:paddingRight="16dp" >
-    <EditText
-        android:id="@+id/max_range_temperature"
-        android:layout_width="325dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/higher_range_temperature"
-        android:inputType="text"
-        android:background="@color/white"
-        android:padding="10dp"
-        android:paddingTop="25dp" />
+        android:paddingLeft="5dp"
+        android:paddingRight="16dp" >
+        <EditText
+            android:id="@+id/max_range_temperature"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/higher_range_temperature"
+            android:inputType="text"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:paddingTop="25dp" />
 
 
-    <ImageView
-        android:layout_toRightOf="@id/max_range_temperature"
-        android:id="@+id/max_range_temperature_image"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:paddingTop="10dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/temprange"
-        />
-</RelativeLayout>
+        <ImageView
+            android:layout_toRightOf="@id/max_range_temperature"
+            android:id="@+id/max_range_temperature_image"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/temprange"
+            />
+    </RelativeLayout>
 
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -153,11 +153,11 @@
 
 
     <ImageView
-    android:layout_width="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_gravity="center"
-    android:layout_height="wrap_content"
-    android:src="@drawable/savebutton"
-    />
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:src="@drawable/savebutton"
+        />
 
 </LinearLayout>

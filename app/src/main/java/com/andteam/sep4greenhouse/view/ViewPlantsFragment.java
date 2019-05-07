@@ -54,7 +54,7 @@ public class ViewPlantsFragment extends Fragment {
         viewModel = ViewModelProviders.of(this).get(TestViewModel.class);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        adapter = new ListAdapter(plants);
+        adapter = new ListAdapter(getActivity(), plants);
         recyclerView.setAdapter(adapter);
         // Observes changes happening on Live Data
         viewModel.getResponses().observe(this, new Observer<List<TestResponse>>() {

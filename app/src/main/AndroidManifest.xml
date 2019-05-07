@@ -21,8 +21,6 @@
             android:exported="true"></activity>
         <activity android:name="com.andteam.sep4greenhouse.view.RegisterActivity"
             android:exported="true"></activity>
-        <activity android:name="com.andteam.sep4greenhouse.view.ModifyPlantProfileActivity"
-            android:exported="true"></activity>
         <activity android:name="com.andteam.sep4greenhouse.view.ViewPlantProfileActivity"
             android:exported="true"></activity>
     </application>

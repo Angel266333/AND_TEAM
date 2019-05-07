@@ -17,4 +17,31 @@ public class PlantDTO {
         this.waterAmount = waterAmount;
         this.waterInterval = waterInterval;
     }
+
+
+    public int getpID() {
+        return pID;
+    }
+
+    public String getTemperature() {
+        return temperature;
+    }
+
+    public String getCo2() {
+        return co2;
+    }
+
+    public String getHumidity() {
+        return humidity;
+    }
+
+    public String getWaterAmount() {
+        return waterAmount;
+    }
+
+    public String getWaterInterval() {
+        return waterInterval;
+    }
+
+
 }

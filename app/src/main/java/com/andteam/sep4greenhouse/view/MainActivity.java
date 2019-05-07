@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize ViewModel
+        viewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+
+
         // Loading the default fragment
         loadFragment(new ViewPlantsFragment());
 
