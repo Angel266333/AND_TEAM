@@ -14,7 +14,6 @@ public class PlantDTO {
     public final int Light;
     public final Date DateTime;
 
-
     public PlantDTO(int plantID, String plantName, double temperature, double CO2, double humidity, double amountOfWater, double hoursSinceWatering, int light, Date dateTime) {
         PlantID = plantID;
         PlantName = plantName;

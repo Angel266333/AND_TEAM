@@ -67,7 +67,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                     // launch activity for result to get edited plant
                     // and then pass it to view model
 
-
                     viewModel.editPlant(plantDTOS.get(getAdapterPosition()));
                 }
             });
