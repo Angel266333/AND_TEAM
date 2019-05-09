@@ -2,17 +2,18 @@ package com.andteam.sep4greenhouse.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
 import com.andteam.sep4greenhouse.model.PlantDTO;
 import com.andteam.sep4greenhouse.model.TestResponse;
-import com.andteam.sep4greenhouse.network.LoginRequestCallback;
+import com.andteam.sep4greenhouse.network.RequestCallback;
 import com.andteam.sep4greenhouse.repository.PlantsRepository;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class ViewPlantsViewModel extends AndroidViewModel implements LoginRequestCallback {
+public class ViewPlantsViewModel extends AndroidViewModel implements RequestCallback {
 
     private PlantsRepository plantsRepository;
     private MutableLiveData<List<PlantDTO>> plantsLiveData;
@@ -24,11 +25,12 @@ public class ViewPlantsViewModel extends AndroidViewModel implements LoginReques
         plantsRepository = new PlantsRepository();
         plants = new LinkedList<>();
         plantsLiveData = new MutableLiveData<>();
+
         plantsLiveData.setValue(plants);
     }
 
 
-    public MutableLiveData<List<PlantDTO>> getPlants() {
+    public LiveData<List<PlantDTO>> getPlants() {
         //TODO make api call for plants
         return plantsLiveData;
     }

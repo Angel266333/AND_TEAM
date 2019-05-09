@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.R;
+import com.andteam.sep4greenhouse.model.UserProfileDTO;
+import com.andteam.sep4greenhouse.repository.UserRepository;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -17,11 +19,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
+
     EditText username;
     EditText password;
     Button btnLogin;
     Button btnRegister;
     FirebaseAuth auth;
+
+    public final static String KEY_USERNAME = "username";
 
     // Do observer on loginViewModel
 
@@ -73,12 +78,26 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void onUserRegisterClick() {
+        UserRepository.getInstance().setEmail(username.getText().toString());
         Intent register = new Intent(this, RegisterActivity.class);
         startActivity(register);
     }
 
     private void onUserLoginClick() {
+        UserRepository.getInstance().setEmail(username.getText().toString());
         Intent login = new Intent(this, MainActivity.class);
         startActivity(login);
+    }
+
+    private void passEmail() {
+        if (username != null) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(KEY_USERNAME, username.getText().toString());
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        } else {
+            Toast.makeText(this, "Could not parse username!", Toast.LENGTH_LONG).show();
+        }
     }
 }

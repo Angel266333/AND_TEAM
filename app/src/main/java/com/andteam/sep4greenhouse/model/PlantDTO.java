@@ -1,8 +1,9 @@
 package com.andteam.sep4greenhouse.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class PlantDTO {
+public class PlantDTO implements Serializable {
 
     public final int PlantID;
     public final String PlantName;
@@ -14,6 +15,7 @@ public class PlantDTO {
     public final int Light;
     public final Date DateTime;
 
+    //TODO : Make data structure class to simplify the method signature
     public PlantDTO(int plantID, String plantName, double temperature, double CO2, double humidity, double amountOfWater, double hoursSinceWatering, int light, Date dateTime) {
         PlantID = plantID;
         PlantName = plantName;

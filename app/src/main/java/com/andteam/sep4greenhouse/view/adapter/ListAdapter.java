@@ -1,6 +1,7 @@
 package com.andteam.sep4greenhouse.view.adapter;
 
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,19 +12,21 @@ import android.widget.TextView;
 
 import com.andteam.sep4greenhouse.R;
 import com.andteam.sep4greenhouse.model.PlantDTO;
-import com.andteam.sep4greenhouse.viewmodel.ViewPlantsViewModel;
+import com.andteam.sep4greenhouse.view.ModifyPlantProfileActivity;
 
 import java.util.List;
+
+import static com.andteam.sep4greenhouse.view.ViewPlantsFragment.EDIT_PLANT_REQUEST;
+import static com.andteam.sep4greenhouse.view.ViewPlantsFragment.KEY_PLANT;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     private List<PlantDTO> plantDTOS;
-    private Context context;
-    private ViewPlantsViewModel viewModel;
+    private Activity activity;
 
-    public ListAdapter(Context context, ViewPlantsViewModel viewModel) {
-        this.context = context;
-        this.viewModel = viewModel;
+    public ListAdapter(Activity activity) {
+        this.plantDTOS = plantDTOS;
+        this.activity = activity;
     }
 
     @NonNull
@@ -31,7 +34,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View view = inflater.inflate(R.layout.list_item_rv, viewGroup, false);
+
         return new ViewHolder(view);
+
     }
 
     @Override
@@ -41,7 +46,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     public void setPlants(List<PlantDTO> plantDTOS) {
         this.plantDTOS = plantDTOS;
-        notifyDataSetChanged();
+
     }
 
     @Override
@@ -54,11 +59,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         ImageButton editPlant;
         ImageButton deletePlant;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull final View itemView) {
             super(itemView);
             itemInRV = itemView.findViewById(R.id.plant);
             editPlant = itemView.findViewById(R.id.edit_profile_pencil);
-            deletePlant = itemView.findViewById(R.id.delete_profile_button);
+            deletePlant = itemView.findViewById(R.id.delete_profile);
 
             editPlant.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,15 +71,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
                     // launch activity for result to get edited plant
                     // and then pass it to view model
-
-                    viewModel.editPlant(plantDTOS.get(getAdapterPosition()));
+                    Intent getPlant = new Intent(v.getContext(), ModifyPlantProfileActivity.class);
+                    getPlant.putExtra(KEY_PLANT, plantDTOS.get(getAdapterPosition()));
+                    activity.startActivityForResult(getPlant, EDIT_PLANT_REQUEST);
                 }
             });
 
             deletePlant.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    viewModel.deletePlant(plantDTOS.get(getAdapterPosition()));
+                    //viewModel.deletePlant(plantDTOS.get(getAdapterPosition()));
                 }
             });
         }
