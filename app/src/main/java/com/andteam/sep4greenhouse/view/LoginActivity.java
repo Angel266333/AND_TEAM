@@ -71,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 onUserRegisterClick();
             }
         });
+        autoFillLogin();
     }
 
     private void makeToastOnFailiure() {
@@ -99,5 +100,10 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Could not parse username!", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void autoFillLogin(){
+        username.setText("plantuser123@gmail.com");
+        password.setText("PlantUser123");
     }
 }

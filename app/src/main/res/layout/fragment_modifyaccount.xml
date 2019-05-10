@@ -43,7 +43,7 @@
         android:inputType="textPassword"/>
 
     <Button
-        android:id="@+id/button_create"
+        android:id="@+id/button_newcredsave"
         android:layout_width="96dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"

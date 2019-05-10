@@ -11,6 +11,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface RetrofitAPI {
@@ -21,7 +22,7 @@ public interface RetrofitAPI {
 
     // 1
     @GET("/plantprofile/{id}")
-    Call<PlantDTO> getPlantProfileData();
+    Call<PlantDTO> getPlantProfileData(@Path("id") int id);
 
     // 2
     @GET("/plantprofile")
@@ -29,21 +30,17 @@ public interface RetrofitAPI {
 
     // 3
     @POST("/plantprofile")
-    Call<PlantDTO> addPlantProfile(@Body PlantDTO plantDTO);
+    Call<Void> addPlantProfile(@Body PlantDTO plantDTO);
 
     // 4
     @DELETE("/plantprofile/{id}")
-    Call<PlantDTO> deletePlantProfile(@Body PlantDTO plantDTO);
+    Call<Void> deletePlantProfile(@Body PlantDTO plantDTO);
 
     // 5
     @PUT("/plantprofile/{id}")
-    Call<PlantDTO> modifyPlantProfile(@Body PlantDTO plantDTO);
+    Call<Void> modifyPlantProfile(@Body PlantDTO plantDTO);
 
     // 6
-    @GET("/plant/{id}")
-    Call<PlantDTO> getPlantStats();
-
-    // 7
     @POST("/water/{id}")
     Call<PlantDTO> waterPlant(@Body PlantDTO plantDTO);
 
