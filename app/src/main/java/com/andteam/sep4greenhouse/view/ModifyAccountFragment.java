@@ -56,6 +56,14 @@ public class ModifyAccountFragment extends Fragment {
         });
 
         deleteAccount = view.findViewById(R.id.delete_profile);
+        deleteAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.delete();
+                Intent login = new Intent(getContext(), MainActivity.class);
+                startActivity(login);
+            }
+        });
         return view;
     }
 
