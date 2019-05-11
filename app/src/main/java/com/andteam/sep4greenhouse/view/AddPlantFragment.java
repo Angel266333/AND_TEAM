@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +21,9 @@ import static android.R.*;
 import static android.R.layout.*;
 
 public class AddPlantFragment extends Fragment{
+
+    ScrollView scrolladddplant;
+
     public AddPlantFragment(){
     }
 
@@ -27,6 +31,8 @@ public class AddPlantFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_addplant,container,false);
+
+        scrolladddplant= (ScrollView)view.findViewById(R.id.scrolladdplant);
         Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
         // Creating an Array Adapter to populate the spinner with the data in the string resources
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(getContext(),R.array.spinner_choices

@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.R;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     Button btnRegister;
     FirebaseAuth auth;
+    ScrollView scrolllogin;
 
     public final static String KEY_USERNAME = "username";
 
@@ -34,6 +36,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
+
+        scrolllogin= (ScrollView)findViewById(R.id.scrolllogin);
+
         auth = FirebaseAuth.getInstance();
         username = findViewById(R.id.username_login_input);
         password = findViewById(R.id.password_login_input);
