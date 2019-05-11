@@ -25,6 +25,13 @@ public class ViewPlantProfileActivity extends AppCompatActivity {
         readOnlyCurrentTemperature = findViewById(R.id.read_only_plant_name_text_id);
         readOnlyHumidityLevel= findViewById(R.id.read_only_humidity_level_text_id);
         readOnlyCO2Level= findViewById(R.id.read_only_co2_level_text_id);
+        waterPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayToastMsg();
+            }
+        });
+
     }
 
     public void waterPlantButton(String msg) {
@@ -34,9 +41,7 @@ public class ViewPlantProfileActivity extends AppCompatActivity {
 
     }
 
-    public void displayToastMsg(View v) {
-
+    public void displayToastMsg() {
         waterPlantButton("Your plant is getting watered now!");
-
     }
 }
