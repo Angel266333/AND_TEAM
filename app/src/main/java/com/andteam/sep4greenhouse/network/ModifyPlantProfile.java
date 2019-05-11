@@ -1,10 +1,8 @@
 package com.andteam.sep4greenhouse.network;
 
-import android.util.Log;
-
 import com.andteam.sep4greenhouse.model.PlantDTO;
-
-import java.util.List;
+import com.andteam.sep4greenhouse.model.PlantProfile;
+import com.andteam.sep4greenhouse.viewmodel.VoidCallBack;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -16,9 +14,9 @@ import static com.andteam.sep4greenhouse.network.NetworkConfig.BASE_URL;
 
 public class ModifyPlantProfile implements Callback<Void> {
 
-    private VoidCallback callback;
+    private VoidCallBack callback;
 
-    public void start(PlantDTO plant, VoidCallback requestCallback) {
+    public void start(PlantProfile plant, VoidCallBack requestCallback) {
         this.callback = requestCallback;
 
         // Build Retrofit Connection
@@ -33,17 +31,20 @@ public class ModifyPlantProfile implements Callback<Void> {
         call.enqueue(this);
     }
 
+
+
     @Override
     public void onResponse(Call<Void> call, Response<Void> response) {
+
         if (response.code() == 200) {
-            callback.onReturn();
+            callback.onReturn(true);
         } else {
-            callback.onReturn();
+            callback.onReturn(false);
         }
     }
 
     @Override
     public void onFailure(Call<Void> call, Throwable t) {
-        Log.d("Login failed", t.toString());
+        callback.onReturn(false);
     }
 }

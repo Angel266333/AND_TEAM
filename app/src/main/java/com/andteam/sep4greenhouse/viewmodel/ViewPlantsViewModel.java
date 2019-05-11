@@ -7,62 +7,62 @@ import android.arch.lifecycle.MutableLiveData;
 import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.model.PlantDTO;
+import com.andteam.sep4greenhouse.model.PlantProfile;
 import com.andteam.sep4greenhouse.network.AllPlantsCallback;
 import com.andteam.sep4greenhouse.network.DeletePlantProfile;
+import com.andteam.sep4greenhouse.network.GetAllPlantsRequest;
 import com.andteam.sep4greenhouse.network.ModifyPlantProfile;
-import com.andteam.sep4greenhouse.network.PlantListRequest;
-import com.andteam.sep4greenhouse.network.PlantRequest;
-import com.andteam.sep4greenhouse.network.VoidCallback;
-import com.andteam.sep4greenhouse.repository.PlantsRepository;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class ViewPlantsViewModel extends AndroidViewModel implements AllPlantsCallback, VoidCallback {
+public class ViewPlantsViewModel extends AndroidViewModel implements AllPlantsCallback, VoidCallBack {
 
-    private PlantsRepository plantsRepository;
-    private MutableLiveData<List<PlantDTO>> plantsLiveData;
-    private String responseFromRetrofit;
-    private List<PlantDTO> plants;
+    private MutableLiveData<List<PlantProfile>> profilesLiveData;
+    private List<PlantProfile> profiles;
 
     public ViewPlantsViewModel(Application application) {
         super(application);
-        plantsRepository = new PlantsRepository();
-        plants = new LinkedList<>();
-        plantsLiveData = new MutableLiveData<>();
-
-        plantsLiveData.setValue(plants);
+        profiles = new LinkedList<>();
+        PlantDTO plantDTO = new PlantDTO(1, "Plant name", 50, 500, 66.3, 99);
+        PlantProfile profile = new PlantProfile(1, "Plant profile", 0.300, 3, plantDTO);
+        profiles.add(profile);
+        profilesLiveData = new MutableLiveData<>();
+        profilesLiveData.setValue(profiles);
     }
 
-
-    public LiveData<List<PlantDTO>> getPlants() {
-        new PlantListRequest().start(this);
-        return plantsLiveData;
+    public LiveData<List<PlantProfile>> getProfiles() {
+        new GetAllPlantsRequest().start(this);
+        return profilesLiveData;
     }
 
-    public void editPlant(PlantDTO plantDTO) {
-        for (int i = 0; i < plants.size(); i++) {
-            if (plants.get(i).PlantID == plantDTO.PlantID) {
-                plants.set(i, plantDTO);
+    public void editProfile(PlantProfile profile) {
+        for (int i = 0; i < profiles.size(); i++) {
+            if (profiles.get(i).getProfileId() == profile.getProfileId()) {
+                profiles.set(i, profile);
             }
         }
-        plantsLiveData.setValue(plants);
-        new ModifyPlantProfile().start(plantDTO, this);
+        profilesLiveData.setValue(profiles);
+        new ModifyPlantProfile().start(profile, this);
     }
 
-    public void deletePlant(PlantDTO plantDTO) {
-        new DeletePlantProfile().start(plantDTO, this);
+    public void deletePlant(PlantProfile profile) {
+        new DeletePlantProfile().start(profile, this);
     }
 
     @Override
-    public void onReturn(List<PlantDTO> response) {
-        plants = response;
-        plantsLiveData.setValue(plants);
+    public void onReturn(List<PlantProfile> response) {
+        profilesLiveData.setValue(profiles);
     }
 
     // Callback method for add/modify//delete request
     @Override
-    public void onReturn() {
-        Toast.makeText(this.getApplication(), "Changes applied!", Toast.LENGTH_LONG).show();
+    public void onReturn(boolean success) {
+        if (success)
+            Toast.makeText(this.getApplication(), "Changes applied!", Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(this.getApplication(), "Task failed successfully", Toast.LENGTH_LONG).show();
     }
+
+
 }
