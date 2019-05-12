@@ -2,8 +2,9 @@ package com.andteam.sep4greenhouse.network;
 
 import android.util.Log;
 
-import com.andteam.sep4greenhouse.model.PlantDTO;
-import com.andteam.sep4greenhouse.model.TestResponse;
+import com.andteam.sep4greenhouse.model.PlantProfile;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,11 +14,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.andteam.sep4greenhouse.network.NetworkConfig.BASE_URL;
 
-public class PlantRequest implements Callback<PlantDTO> {
+public class GetAllPlantsRequest implements Callback<List<PlantProfile>> {
 
-    private RequestCallback callback;
+    private AllPlantsCallback callback;
 
-    public void start(int id, RequestCallback requestCallback) {
+    public void start(AllPlantsCallback requestCallback) {
         this.callback = requestCallback;
 
         // Build Retrofit Connection
@@ -28,12 +29,12 @@ public class PlantRequest implements Callback<PlantDTO> {
 
         // Reference to RetrofitAPI class
         RetrofitAPI api = retrofit.create(RetrofitAPI.class);
-        Call<PlantDTO> call = api.getPlantProfileData(id);
+        Call<List<PlantProfile>> call = api.getAllPlantProfiles();
         call.enqueue(this);
     }
 
     @Override
-    public void onResponse(Call<PlantDTO> call, Response<PlantDTO> response) {
+    public void onResponse(Call<List<PlantProfile>> call, Response<List<PlantProfile>> response) {
         if (response.code() == 200) {
             callback.onReturn(response.body());
         } else {
@@ -42,7 +43,7 @@ public class PlantRequest implements Callback<PlantDTO> {
     }
 
     @Override
-    public void onFailure(Call<PlantDTO> call, Throwable t) {
+    public void onFailure(Call<List<PlantProfile>> call, Throwable t) {
         Log.d("Login failed", t.toString());
     }
 }

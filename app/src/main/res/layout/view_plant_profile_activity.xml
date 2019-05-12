@@ -7,88 +7,141 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/profile_name_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="@string/profile_name"
+        android:textColor="@color/white"
+        android:textSize="11pt" />
+
+    <TextView
+        android:id="@+id/read_only_profile_name_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginLeft="7dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_toRightOf="@id/profile_name_text_id" />
+
+    <TextView
         android:id="@+id/plant_name_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/plant_name"
-        android:layout_marginTop="45dp"
         android:layout_marginLeft="15dp"
         android:textColor="@color/white"
         android:textSize="11pt"
+        android:layout_below="@+id/read_only_profile_name_text_id"
         />
 
-    <EditText
+    <TextView
         android:id="@+id/read_only_plant_name_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/plant_name_text_id"
-        android:layout_alignBottom="@+id/plant_name_text_id"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="-4dp"
-        android:layout_toRightOf="@+id/plant_name_text_id" />
+        android:text="Plant name"
+        android:layout_marginLeft="7dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_toRightOf="@id/plant_name_text_id"
+        android:layout_alignBaseline="@+id/plant_name_text_id"/>
 
     <TextView
-        android:id="@+id/current_temperature_text_id"
+        android:id="@+id/temperature_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/current_temperature"
         android:layout_marginLeft="15dp"
         android:textColor="@color/white"
         android:textSize="11pt"
-        android:layout_below="@id/plant_name_text_id"
+        android:layout_below="@+id/read_only_plant_name_text_id"
         />
 
-    <EditText
-        android:id="@+id/read_only_current_temperature_text_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/humidity_level_text_id"
-        android:layout_marginLeft="14dp"
-        android:layout_marginBottom="-7dp"
-        android:layout_toRightOf="@id/current_temperature_text_id" />
     <TextView
-        android:id="@+id/humidity_level_text_id"
+        android:id="@+id/read_only_temperature_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/humid_level"
-        android:layout_marginLeft="15dp"
+        android:text="Temp"
+        android:layout_marginLeft="7dp"
         android:textColor="@color/white"
         android:textSize="11pt"
-        android:layout_below="@+id/current_temperature_text_id"
-        />
+        android:layout_toRightOf="@id/temperature_text_id"
+        android:layout_alignBaseline="@+id/temperature_text_id"/>
 
-    <EditText
-        android:id="@+id/read_only_humidity_level_text_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/humidity_level_text_id"
-        android:layout_marginLeft="7dp"
-        android:layout_marginBottom="-4dp"
-        android:layout_toRightOf="@id/humidity_level_text_id" />
     <TextView
-        android:id="@+id/co2_level_text_id"
+        android:id="@+id/co2_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/co2_level"
         android:layout_marginLeft="15dp"
         android:textColor="@color/white"
         android:textSize="11pt"
-        android:layout_below="@id/humidity_level_text_id"
+        android:layout_below="@+id/read_only_temperature_text_id"
         />
 
-    <EditText
-        android:id="@+id/read_only_co2_level_text_id"
+    <TextView
+        android:id="@+id/read_only_co2_text_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/co2_level_text_id"
-        android:layout_marginLeft="19dp"
-        android:layout_marginBottom="-1dp"
-        android:layout_toRightOf="@id/co2_level_text_id" />
+        android:text="CO2"
+        android:layout_marginLeft="7dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_toRightOf="@id/co2_text_id"
+        android:layout_alignBaseline="@+id/co2_text_id"/>
+
+
+    <TextView
+        android:id="@+id/humidity_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/humidity_level"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_below="@+id/read_only_co2_text_id"
+        />
+
+    <TextView
+        android:id="@+id/read_only_humidity_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity"
+        android:layout_marginLeft="7dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_toRightOf="@id/humidity_text_id"
+        android:layout_alignBaseline="@+id/humidity_text_id"/>
+
+    <TextView
+        android:id="@+id/light_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/light_level"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_below="@+id/read_only_humidity_text_id"
+        />
+
+    <TextView
+        android:id="@+id/read_only_light_text_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity"
+        android:layout_marginLeft="7dp"
+        android:textColor="@color/white"
+        android:textSize="11pt"
+        android:layout_toRightOf="@id/light_text_id"
+        android:layout_alignBaseline="@+id/light_text_id"/>
+
+
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="230dp"
         android:gravity="center"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"

@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void autoFillLogin(){
-        username.setText("plantuser123@gmail.com");
-        password.setText("PlantUser123");
+        username.setText("abcdef@gmail.com");
+        password.setText("Abcdef123");
     }
 }
