@@ -4,7 +4,15 @@
     android:orientation="vertical"
     android:background="@drawable/backgroundlogin"
     android:layout_height="match_parent">
-
+    <ScrollView
+        android:id="@+id/scrollmodifplant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
     <TextView
         android:id="@+id/modify_plant_profile_text"
         android:layout_width="wrap_content"
@@ -16,149 +24,83 @@
         android:text="@string/modify_plant_profile_header"
         android:textSize="14pt" />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" >
+
         <EditText
             android:id="@+id/min_range_temperature"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
             android:hint="@string/lower_range_temperature"
-            android:inputType="text"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:paddingTop="25dp" />
-
-
-        <ImageView
-            android:layout_toRightOf="@id/min_range_temperature"
-            android:layout_width="wrap_content"
-            android:id="@+id/min_range_temperature_image"
-            android:layout_gravity="center"
-            android:paddingTop="10dp"
+            android:layout_width="285dp"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/temprange"
-            />
-    </RelativeLayout>
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingTop="25dp"  />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" >
+
         <EditText
             android:id="@+id/max_range_temperature"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
             android:hint="@string/higher_range_temperature"
-            android:inputType="text"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:paddingTop="25dp" />
-
-
-        <ImageView
-            android:id="@+id/max_range_temperature_image"
-            android:layout_toRightOf="@id/max_range_temperature"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="10dp"
+            android:layout_width="285dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/temprange"
-            />
-    </RelativeLayout>
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingTop="25dp"  />
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" >
         <EditText
             android:id="@+id/humidity_level"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
             android:hint="@string/humid_level"
-            android:inputType="text"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:paddingTop="25dp" />
-
-
-        <ImageView
-            android:layout_toRightOf="@id/humidity_level"
-            android:id="@+id/humidity_level_image"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="285dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/humiditylvl"
-            />
-    </RelativeLayout>
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingTop="25dp"  />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" >
+
+
         <EditText
             android:id="@+id/water_amount"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
             android:hint="@string/water_amount"
-            android:inputType="text"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@color/white"
+            android:inputType="text"
             android:padding="10dp"
             android:paddingTop="25dp" />
 
 
-        <ImageView
-            android:layout_toRightOf="@id/water_amount"
-            android:id="@+id/water_amount_image"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:layout_height="wrap_content"
-            android:paddingTop="12dp"
-            android:src="@drawable/wateramount"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" >
         <EditText
             android:id="@+id/watering_interval"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
             android:hint="@string/water_amount"
-            android:inputType="text"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:paddingTop="25dp" />
-
-
-        <ImageView
-            android:layout_toRightOf="@id/watering_interval"
-            android:id="@+id/watering_interval_image"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="285dp"
             android:layout_height="wrap_content"
-            android:paddingTop="12dp"
-            android:src="@drawable/wateringinterval"
-            />
-    </RelativeLayout>
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingTop="25dp"  />
 
 
     <Button
         android:id="@+id/savebutton"
-        android:layout_width="wrap_content"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:background="@drawable/savebutton"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:background="@drawable/btn"
         />
-
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

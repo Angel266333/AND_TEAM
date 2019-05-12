@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.R;
@@ -35,6 +36,7 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
     private EditText waterAmount;
     private EditText waterInterval;
     private Button saveInput;
+    ScrollView scrollmodifplant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,7 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
         waterInterval = findViewById(R.id.watering_interval);
         saveInput = findViewById(R.id.savebutton);
         // Listen
+        scrollmodifplant= (ScrollView)findViewById(R.id.scrollmodifplant);
 
 
         // TODO : Contact viewModel
