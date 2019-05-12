@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-<<<<<<< HEAD
 import android.widget.ScrollView;
 import android.widget.Toast;
-=======
->>>>>>> master
+
 
 import com.andteam.sep4greenhouse.R;
+import com.andteam.sep4greenhouse.model.PlantDTO;
 import com.andteam.sep4greenhouse.model.PlantProfile;
 import com.andteam.sep4greenhouse.viewmodel.ViewPlantsViewModel;
 
@@ -28,12 +27,9 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
     private EditText waterAmount;
     private EditText waterInterval;
     private Button saveInput;
-<<<<<<< HEAD
     ScrollView scrollmodifplant;
-=======
     private ViewPlantsViewModel viewModel;
     private PlantProfile profile;
->>>>>>> master
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +37,11 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
         setContentView(R.layout.fragment_modify_plant_profile);
         viewModel = ViewModelProviders.of(this).get(ViewPlantsViewModel.class);
 
+        scrollmodifplant= (ScrollView)findViewById(R.id.scrollmodifplant);
+
         profileName = findViewById(R.id.profile_name);
         waterAmount = findViewById(R.id.water_amount);
         waterInterval = findViewById(R.id.watering_interval);
-<<<<<<< HEAD
-        saveInput = findViewById(R.id.savebutton);
-        // Listen
-        scrollmodifplant= (ScrollView)findViewById(R.id.scrollmodifplant);
-
-
-        // TODO : Contact viewModel
-
-        PlantDTO plant = (PlantDTO) getIntent().getExtras().getSerializable(KEY_PLANT);
-
-
-
-=======
->>>>>>> master
 
         saveInput = findViewById(R.id.savebutton);
         saveInput.setOnClickListener(new View.OnClickListener() {

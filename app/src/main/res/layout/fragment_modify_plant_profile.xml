@@ -24,7 +24,7 @@
         android:text="@string/modify_plant_profile_header"
         android:textSize="14pt" />
 
-<<<<<<< HEAD
+
 
         <EditText
             android:id="@+id/min_range_temperature"
@@ -54,47 +54,30 @@
 
         <EditText
             android:id="@+id/humidity_level"
-            android:hint="@string/humid_level"
+            android:hint="@string/humidity_level"
             android:layout_width="285dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-=======
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" />
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" />
-
-
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="5dp"
-        android:paddingRight="16dp" >
-        <EditText
-            android:id="@+id/profile_name"
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/profile_name"
-            android:inputType="text"
->>>>>>> master
             android:background="@color/white"
             android:inputType="text"
             android:padding="10dp"
             android:paddingTop="25dp"  />
 
 
-<<<<<<< HEAD
-=======
-    </RelativeLayout>
->>>>>>> master
+        <EditText
+            android:id="@+id/profile_name"
+            android:hint="@string/profile_name"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingTop="25dp" />
+
+
 
         <EditText
             android:id="@+id/water_amount"
@@ -111,18 +94,11 @@
 
         <EditText
             android:id="@+id/watering_interval"
-<<<<<<< HEAD
             android:hint="@string/water_amount"
             android:layout_width="285dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-=======
-            android:layout_width="325dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/watering_interval"
-            android:inputType="text"
->>>>>>> master
             android:background="@color/white"
             android:inputType="text"
             android:padding="10dp"
