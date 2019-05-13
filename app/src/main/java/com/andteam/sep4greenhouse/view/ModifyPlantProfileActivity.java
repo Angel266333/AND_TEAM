@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.andteam.sep4greenhouse.R;
 import com.andteam.sep4greenhouse.model.PlantProfile;
@@ -56,6 +57,7 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
         int wInterval = Integer.parseInt(waterInterval.getText().toString());
         PlantProfile profile = new PlantProfile( this.profile.getProfileId(), name, water, wInterval,  this.profile.getPlant());
         viewModel.editProfile(profile);
+        Toast.makeText(this, "Changes applied successfully!", Toast.LENGTH_LONG).show();
     }
 
 }
