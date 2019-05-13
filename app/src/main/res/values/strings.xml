@@ -1,7 +1,7 @@
 <resources>
 
     <!--LoginActivity-->
-    <string name="app_name">My Application</string>
+    <string name="app_name">SmartGarden</string>
     <string name="login_text">Insert username and password</string>
     <string name="username_hint">Insert username</string>
     <string name="password_hint">Insert password</string>

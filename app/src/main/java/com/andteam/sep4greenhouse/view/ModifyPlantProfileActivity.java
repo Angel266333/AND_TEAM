@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
+
 import com.andteam.sep4greenhouse.R;
+import com.andteam.sep4greenhouse.model.PlantDTO;
 import com.andteam.sep4greenhouse.model.PlantProfile;
 import com.andteam.sep4greenhouse.viewmodel.ViewPlantsViewModel;
 
@@ -24,6 +27,7 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
     private EditText waterAmount;
     private EditText waterInterval;
     private Button saveInput;
+    ScrollView scrollmodifplant;
     private ViewPlantsViewModel viewModel;
     private PlantProfile profile;
 
@@ -32,6 +36,8 @@ public class ModifyPlantProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_modify_plant_profile);
         viewModel = ViewModelProviders.of(this).get(ViewPlantsViewModel.class);
+
+        scrollmodifplant= (ScrollView)findViewById(R.id.scrollmodifplant);
 
         profileName = findViewById(R.id.profile_name);
         waterAmount = findViewById(R.id.water_amount);
